@@ -29,7 +29,7 @@ cp -Rf $HOME/temp/* .
 #add, commit and push files
 git add -f .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER"
-git push -fq origin latest_build > /dev/null
+git push -f origin latest_build #  > /dev/null
 echo "Done updating latest_build\n"
 
 else
