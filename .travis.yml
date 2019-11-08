@@ -4,8 +4,7 @@ before_install:
 script:
 - tests/run.sh
 - shellcheck --exclude=SC1004 bin/pdfjam
-after_success:
-- travis-build.sh
+- ./travis-build.sh
 env:
   global:
   - GH_USER: DavidFirth
