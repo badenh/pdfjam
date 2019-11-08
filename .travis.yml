@@ -9,3 +9,4 @@ env:
   global:
   - GH_USER: DavidFirth
   - GH_REPO: pdfjam
+  
