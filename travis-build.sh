@@ -6,12 +6,13 @@ if [[ $TRAVIS_BRANCH == "devel" && $TRAVIS_PULL_REQUEST == "false" ]]; then
 
 echo "Starting to update latest_build\n"
 
-ls
-exit 0
+
 
 #copy data we're interested in to other place
 mkdir -p $HOME/temp
-cp -R .* $HOME/temp
+echo "directory made"
+cp -R ./* $HOME/temp
+echo "copying done"
 
 #go to home and setup git
 cd $HOME
