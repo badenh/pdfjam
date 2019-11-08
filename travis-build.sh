@@ -11,7 +11,7 @@ echo "Starting to update latest_build\n"
 #copy data we're interested in to other place
 mkdir -p $HOME/temp
 echo "directory made"
-cp -R ./VERSION $HOME/temp
+cp -R ./pdfjam.conf $HOME/temp
 echo "copying done"
 
 #go to home and setup git
