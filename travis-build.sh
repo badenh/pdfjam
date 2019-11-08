@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo $HOME
-exit 0
-
 set -e # exit with nonzero exit code if anything fails
 
 if [[ $TRAVIS_BRANCH == "devel" && $TRAVIS_PULL_REQUEST == "false" ]]; then
 
 echo "Starting to update latest_build\n"
+
+ls
+exit 0
 
 #copy data we're interested in to other place
 mkdir -p $HOME/temp
