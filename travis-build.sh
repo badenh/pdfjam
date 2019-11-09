@@ -11,7 +11,7 @@ echo "Starting to update latest_build\n"
 #copy data we're interested in to other place
 mkdir -p $HOME/temp
 echo "directory made"
-cp -R ./pdfjam.conf $HOME/temp
+cp -R ./README.md $HOME/temp
 echo "copying done"
 
 #go to home and setup git
@@ -20,10 +20,16 @@ git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis"
 
 #using token clone latest_build branch
-git clone --quiet --branch=latest_build https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO}.git latest_build > /dev/null
+#git clone --quiet --branch=latest_build https://${GH_TOKEN}@github.com/${GH_USER}/${GH_REPO}.git latest_build > /dev/null
 
-#go into directory and copy data we're interested in to that directory
+git clone https://DavidFirth:${GH_TOKEN}@github.com/DavidFirth/pdfjam.git --branch=latest_build latest_build
+
 cd latest_build
+git remote rm origin
+git remote add origin https://DavidFirth:${GH_TOKEN}@github.com/DavidFirth/pdfjam.git
+
+
+#copy data we're interested in to latest_build directory
 cp -Rf $HOME/temp/* .
 
 #add, commit and push files
